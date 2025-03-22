@@ -86,7 +86,7 @@ Game.registerMod(modID, {
     },
 
     autoGodzamok: () => {
-        if (!Game.Objects.Temple.minigame.slot.includes(2)) return
+        if (!Game.Objects.Temple.minigame?.slot?.includes(2)) return
         if (Game.buffs.Devastation !== undefined) return
 
         const amount = Game.mods[modID].amount
