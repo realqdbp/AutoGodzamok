@@ -1,0 +1,12 @@
+{
+	"Name": "Auto Godzamok",
+	"ID": "autogodzamok",
+	"Author": "qdbp",
+	"Description": "Automatically sell and re-buy farms.",
+	"ModVersion": 1,
+	"GameVersion": 2.053,
+	"Date": "21/03/2025",
+	"Dependencies": [],
+	"AllowSteamAchievs": 1,
+	"Disabled": 1
+}
