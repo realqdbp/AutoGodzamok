@@ -1,6 +1,4 @@
-const modID = "autogodzamok"
-
-Game.registerMod(modID, {
+Game.registerMod("autogodzamok", {
 
     init: function () {
         Game.Notify(`Auto Godzamok loaded!`, 'Change the amount in the Settings.', [23, 18]);
@@ -15,14 +13,14 @@ Game.registerMod(modID, {
     },
 
     save: function () {
-        return `${Game.mods[modID].amount}`
+        return `${Game.mods["autogodzamok"].amount}`
     },
 
     load: function (str) {
         try {
-            Game.mods[modID].amount = parseInt(str);
+            Game.mods["autogodzamok"].amount = parseInt(str);
         } catch (ignored) {
-            Game.mods[modID].amount = 0
+            Game.mods["autogodzamok"].amount = 0
         }
     },
 
@@ -68,14 +66,14 @@ Game.registerMod(modID, {
         const text = document.createElement("div")
         text.className = "smallFancyButton"
         text.style.float = "right"
-        text.textContent = Game.mods[modID].amount
+        text.textContent = Game.mods["autogodzamok"].amount
         sliderBox.appendChild(text)
 
         const input = document.createElement("input")
         input.type = "number"
         input.min = "0"
-        input.value = Game.mods[modID].amount
-        input.onchange = function () { Game.mods[modID].amount = isNaN(input.valueAsNumber) ? 0 : input.valueAsNumber }
+        input.value = Game.mods["autogodzamok"].amount
+        input.onchange = function () { Game.mods["autogodzamok"].amount = isNaN(input.valueAsNumber) ? 0 : input.valueAsNumber }
         sliderBox.appendChild(input)
 
         const inputLabel = document.createElement("label")
@@ -89,7 +87,7 @@ Game.registerMod(modID, {
         if (!Game.Objects.Temple.minigame?.slot?.includes(2)) return
         if (Game.buffs.Devastation !== undefined) return
 
-        const amount = Game.mods[modID].amount
+        const amount = Game.mods["autogodzamok"].amount
         Game.Objects.Farm.sell(amount)
         Game.Objects.Farm.buy(amount)
     }
